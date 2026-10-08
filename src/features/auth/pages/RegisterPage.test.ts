@@ -23,18 +23,18 @@ async function setup() {
 }
 
 async function fill(wrapper: Awaited<ReturnType<typeof setup>>["wrapper"]) {
-  await wrapper.find("#register-name").setValue(" Delcom ");
-  await wrapper.find("#register-email").setValue("a@b.c");
-  await wrapper.find("#register-password").setValue("123456");
+  await wrapper.find("#register-name-input").setValue(" Delcom ");
+  await wrapper.find("#register-email-input").setValue("a@b.c");
+  await wrapper.find("#register-password-input").setValue("123456");
 }
 
 describe("RegisterPage", () => {
   it("menampilkan formulir registrasi", async () => {
     const { wrapper } = await setup();
 
-    expect(wrapper.find("#register-name").exists()).toBe(true);
-    expect(wrapper.find("#register-email").exists()).toBe(true);
-    expect(wrapper.find("#register-password").exists()).toBe(true);
+    expect(wrapper.find("#register-name-input").exists()).toBe(true);
+    expect(wrapper.find("#register-email-input").exists()).toBe(true);
+    expect(wrapper.find("#register-password-input").exists()).toBe(true);
     expect(wrapper.find("button[type=submit]").text()).toContain("Daftar Sekarang");
   });
 

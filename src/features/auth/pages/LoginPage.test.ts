@@ -26,8 +26,8 @@ describe("LoginPage", () => {
   it("menampilkan formulir login", async () => {
     const { wrapper } = await setup();
 
-    expect(wrapper.find("#login-email").exists()).toBe(true);
-    expect(wrapper.find("#login-password").exists()).toBe(true);
+    expect(wrapper.find("#login-email-input").exists()).toBe(true);
+    expect(wrapper.find("#login-password-input").exists()).toBe(true);
     expect(wrapper.find("button[type=submit]").text()).toContain("Masuk Sekarang");
   });
 
@@ -45,7 +45,7 @@ describe("LoginPage", () => {
     const { wrapper, store } = await setup();
     const spy = vi.spyOn(store, "asyncLogin").mockResolvedValue(undefined);
 
-    await wrapper.find("#login-email").setValue("a@b.c");
+    await wrapper.find("#login-email-input").setValue("a@b.c");
     await wrapper.find("form").trigger("submit");
 
     expect(showErrorDialog).toHaveBeenCalled();
@@ -58,8 +58,8 @@ describe("LoginPage", () => {
       store.isAuthLoggedIn = true;
     });
 
-    await wrapper.find("#login-email").setValue(" a@b.c ");
-    await wrapper.find("#login-password").setValue("123456");
+    await wrapper.find("#login-email-input").setValue(" a@b.c ");
+    await wrapper.find("#login-password-input").setValue("123456");
     await wrapper.find("form").trigger("submit");
     await flushPromises();
 
@@ -71,8 +71,8 @@ describe("LoginPage", () => {
     const { wrapper, store, router } = await setup();
     vi.spyOn(store, "asyncLogin").mockResolvedValue(undefined);
 
-    await wrapper.find("#login-email").setValue("a@b.c");
-    await wrapper.find("#login-password").setValue("salah");
+    await wrapper.find("#login-email-input").setValue("a@b.c");
+    await wrapper.find("#login-password-input").setValue("salah");
     await wrapper.find("form").trigger("submit");
     await flushPromises();
 

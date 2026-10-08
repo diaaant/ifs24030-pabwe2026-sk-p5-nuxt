@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 import tailwindcss from "@tailwindcss/vite";
 
 const customPort = Number(process.env.APP_PORT || process.env.PORT) || 3000;
@@ -21,11 +22,20 @@ export default defineNuxtConfig({
 
   modules: ["@pinia/nuxt"],
 
+  hooks: {
+    // Komponen root proyek ini bernama src/App.vue (huruf kapital).
+    // Nuxt mencari "app.vue", sehingga di sistem file case-sensitive (Linux)
+    // lokasi root component perlu diarahkan secara eksplisit.
+    "app:resolve"(app) {
+      app.mainComponent = fileURLToPath(new URL("./src/App.vue", import.meta.url));
+    },
+  },
+
   vite: {
     plugins: [tailwindcss()],
     define: {
       DELCOM_BASEURL: JSON.stringify(
-        process.env.VITE_DELCOM_BASEURL || "https://open-api.delcom.org/api/v1",
+        process.env.VITE_DELCOM_BASEURL || "https://open-api.delcom.org/api/v1"
       ),
     },
     build: {

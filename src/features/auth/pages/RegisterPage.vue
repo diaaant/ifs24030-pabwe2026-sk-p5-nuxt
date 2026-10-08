@@ -30,14 +30,14 @@ async function onSubmit() {
   <form class="space-y-4" data-testid="register-form" @submit.prevent="onSubmit">
     <div>
       <label
-        for="register-name"
+        for="register-name-input"
         class="mb-1 block text-xs font-bold uppercase tracking-wide text-slate-600">
         Nama Lengkap
       </label>
       <div class="relative">
         <User class="absolute left-3 top-3 h-4 w-4 text-slate-400" />
         <input
-          id="register-name"
+          id="register-name-input"
           type="text"
           placeholder="Nama lengkap"
           class="w-full rounded-xl border border-slate-200 py-2.5 pl-9 pr-3 text-sm outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
@@ -48,14 +48,14 @@ async function onSubmit() {
 
     <div>
       <label
-        for="register-email"
+        for="register-email-input"
         class="mb-1 block text-xs font-bold uppercase tracking-wide text-slate-600">
         Alamat Email
       </label>
       <div class="relative">
         <Mail class="absolute left-3 top-3 h-4 w-4 text-slate-400" />
         <input
-          id="register-email"
+          id="register-email-input"
           type="email"
           placeholder="nama@email.com"
           class="w-full rounded-xl border border-slate-200 py-2.5 pl-9 pr-3 text-sm outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
@@ -66,14 +66,14 @@ async function onSubmit() {
 
     <div>
       <label
-        for="register-password"
+        for="register-password-input"
         class="mb-1 block text-xs font-bold uppercase tracking-wide text-slate-600">
         Kata Sandi
       </label>
       <div class="relative">
         <Lock class="absolute left-3 top-3 h-4 w-4 text-slate-400" />
         <input
-          id="register-password"
+          id="register-password-input"
           type="password"
           placeholder="••••••••"
           class="w-full rounded-xl border border-slate-200 py-2.5 pl-9 pr-3 text-sm outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
@@ -83,6 +83,7 @@ async function onSubmit() {
     </div>
 
     <button
+      id="register-submit-button"
       type="submit"
       class="flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-600 py-2.5 text-sm font-semibold text-white shadow-md hover:bg-indigo-700 disabled:opacity-60"
       :disabled="auth.isAuthRegister">
