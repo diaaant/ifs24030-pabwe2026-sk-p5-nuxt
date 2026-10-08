@@ -76,9 +76,9 @@ async function onLogout() {
           <p class="text-sm font-semibold leading-tight text-slate-900" data-testid="display-name">
             {{ displayName }}
           </p>
-          <p class="text-xs leading-tight text-slate-500">
-            @{{ username }} ·
-            <span class="font-medium text-emerald-600">Sesi aktif</span>
+          <p class="text-xs leading-tight text-slate-600">
+            @{{ ifs24030 }} ·
+            <span class="font-medium text-emerald-700">Sesi aktif</span>
           </p>
         </div>
       </div>

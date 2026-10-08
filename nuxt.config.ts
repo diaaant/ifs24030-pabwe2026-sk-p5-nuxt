@@ -72,6 +72,13 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "id",
       },
+      meta: [
+        {
+          name: "description",
+          content:
+            "Delcom Cash Flow: aplikasi pencatat arus kas pribadi untuk mencatat pemasukan, pengeluaran, dan saldo.",
+        },
+      ],
       link: [
         { rel: "icon", type: "image/svg+xml", href: "/logo.svg" },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -81,8 +88,11 @@ export default defineNuxtConfig({
           crossorigin: "",
         },
         {
+          // Dimuat non-blocking agar tidak menghambat render pertama
           rel: "stylesheet",
           href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap",
+          media: "print",
+          onload: "this.media='all'",
         },
       ],
       bodyAttrs: {

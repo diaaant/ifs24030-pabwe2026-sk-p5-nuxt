@@ -87,7 +87,7 @@ const labelClass = "mb-1 block text-xs font-bold uppercase tracking-wide text-sl
   <section class="mx-auto max-w-3xl space-y-6">
     <div>
       <h1 class="text-2xl font-extrabold text-slate-900">Profil Saya</h1>
-      <p class="text-sm text-slate-500">Kelola informasi akun, foto, dan kata sandi Anda.</p>
+      <p class="text-sm text-slate-600">Kelola informasi akun, foto, dan kata sandi Anda.</p>
     </div>
 
     <div class="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">

@@ -53,12 +53,12 @@ async function onDelete() {
       Kembali
     </RouterLink>
 
-    <p v-if="store.isCashFlow" class="py-10 text-center text-slate-500">
+    <p v-if="store.isCashFlow" class="py-10 text-center text-slate-600">
       Memuat rincian transaksi...
     </p>
     <p
       v-else-if="!store.cashFlow"
-      class="rounded-2xl border border-dashed border-slate-200 bg-white py-10 text-center text-slate-500">
+      class="rounded-2xl border border-dashed border-slate-200 bg-white py-10 text-center text-slate-600">
       Transaksi tidak ditemukan.
     </p>
     <div
@@ -67,7 +67,7 @@ async function onDelete() {
       data-testid="detail-card">
       <div class="flex items-start justify-between gap-3">
         <div>
-          <p class="text-xs font-bold uppercase tracking-wide text-slate-500">Label</p>
+          <p class="text-xs font-bold uppercase tracking-wide text-slate-600">Label</p>
           <h1 class="text-2xl font-extrabold text-slate-900">{{ store.cashFlow.label }}</h1>
         </div>
         <span
@@ -83,23 +83,23 @@ async function onDelete() {
 
       <dl class="grid gap-4 sm:grid-cols-2">
         <div>
-          <dt class="text-xs font-bold uppercase tracking-wide text-slate-500">Sumber Dana</dt>
+          <dt class="text-xs font-bold uppercase tracking-wide text-slate-600">Sumber Dana</dt>
           <dd class="mt-1 font-semibold text-slate-800">
             {{ getSourceLabel(store.cashFlow.source) }}
           </dd>
         </div>
         <div>
-          <dt class="text-xs font-bold uppercase tracking-wide text-slate-500">Keterangan</dt>
+          <dt class="text-xs font-bold uppercase tracking-wide text-slate-600">Keterangan</dt>
           <dd class="mt-1 text-slate-800" data-testid="detail-description">
             {{ store.cashFlow.description || "-" }}
           </dd>
         </div>
         <div>
-          <dt class="text-xs font-bold uppercase tracking-wide text-slate-500">Dibuat</dt>
+          <dt class="text-xs font-bold uppercase tracking-wide text-slate-600">Dibuat</dt>
           <dd class="mt-1 text-slate-800">{{ formatDateTime(store.cashFlow.created_at) }}</dd>
         </div>
         <div>
-          <dt class="text-xs font-bold uppercase tracking-wide text-slate-500">Diperbarui</dt>
+          <dt class="text-xs font-bold uppercase tracking-wide text-slate-600">Diperbarui</dt>
           <dd class="mt-1 text-slate-800">{{ formatDateTime(store.cashFlow.updated_at) }}</dd>
         </div>
       </dl>

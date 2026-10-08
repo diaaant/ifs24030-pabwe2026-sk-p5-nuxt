@@ -25,10 +25,10 @@ const menus = [
       :class="open ? 'translate-x-0' : '-translate-x-full'"
       data-testid="sidebar">
       <div class="mb-4 flex items-center justify-between lg:hidden">
-        <span class="text-sm font-bold text-slate-500">Menu</span>
+        <span class="text-sm font-bold text-slate-600">Menu</span>
         <button
           type="button"
-          class="rounded-lg p-1.5 text-slate-500 hover:bg-slate-100"
+          class="rounded-lg p-1.5 text-slate-600 hover:bg-slate-100"
           aria-label="Tutup menu"
           data-testid="close-sidebar"
           @click="emit('close')">

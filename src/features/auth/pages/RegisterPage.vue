@@ -35,7 +35,7 @@ async function onSubmit() {
         Nama Lengkap
       </label>
       <div class="relative">
-        <User class="absolute left-3 top-3 h-4 w-4 text-slate-400" />
+        <User class="absolute left-3 top-3 h-4 w-4 text-slate-600" />
         <input
           id="register-name-input"
           type="text"
@@ -53,7 +53,7 @@ async function onSubmit() {
         Alamat Email
       </label>
       <div class="relative">
-        <Mail class="absolute left-3 top-3 h-4 w-4 text-slate-400" />
+        <Mail class="absolute left-3 top-3 h-4 w-4 text-slate-600" />
         <input
           id="register-email-input"
           type="email"
@@ -71,7 +71,7 @@ async function onSubmit() {
         Kata Sandi
       </label>
       <div class="relative">
-        <Lock class="absolute left-3 top-3 h-4 w-4 text-slate-400" />
+        <Lock class="absolute left-3 top-3 h-4 w-4 text-slate-600" />
         <input
           id="register-password-input"
           type="password"

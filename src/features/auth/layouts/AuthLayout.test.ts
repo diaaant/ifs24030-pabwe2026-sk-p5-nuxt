@@ -8,13 +8,13 @@ describe("AuthLayout", () => {
 
     expect(wrapper.text()).toContain("Delcom Cash Flow");
     expect(wrapper.find("[data-testid=tab-login]").classes()).toContain("text-indigo-600");
-    expect(wrapper.find("[data-testid=tab-register]").classes()).toContain("text-slate-500");
+    expect(wrapper.find("[data-testid=tab-register]").classes()).toContain("text-slate-600");
   });
 
   it("menandai tab Daftar Baru aktif pada /auth/register", async () => {
     const { wrapper } = await renderWithProviders(AuthLayout, { route: "/auth/register" });
 
     expect(wrapper.find("[data-testid=tab-register]").classes()).toContain("text-indigo-600");
-    expect(wrapper.find("[data-testid=tab-login]").classes()).toContain("text-slate-500");
+    expect(wrapper.find("[data-testid=tab-login]").classes()).toContain("text-slate-600");
   });
 });

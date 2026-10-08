@@ -32,7 +32,7 @@ async function onSubmit(payload: CashFlowPayload) {
         <h2 class="text-lg font-extrabold text-slate-900">Tambah Transaksi</h2>
         <button
           type="button"
-          class="rounded-lg p-1.5 text-slate-500 hover:bg-slate-100"
+          class="rounded-lg p-1.5 text-slate-600 hover:bg-slate-100"
           aria-label="Tutup"
           data-testid="close-modal"
           @click="emit('close')">

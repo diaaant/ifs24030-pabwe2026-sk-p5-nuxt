@@ -14,15 +14,15 @@ onMounted(() => {
   <section>
     <div class="mb-6">
       <h1 class="text-2xl font-extrabold text-slate-900">Direktori Pengguna</h1>
-      <p class="text-sm text-slate-500">Daftar seluruh pengguna yang terdaftar di sistem.</p>
+      <p class="text-sm text-slate-600">Daftar seluruh pengguna yang terdaftar di sistem.</p>
     </div>
 
-    <p v-if="store.isUsers" class="py-10 text-center text-slate-500">
+    <p v-if="store.isUsers" class="py-10 text-center text-slate-600">
       Memuat data pengguna...
     </p>
     <p
       v-else-if="store.users.length === 0"
-      class="py-10 text-center text-slate-500">
+      class="py-10 text-center text-slate-600">
       Belum ada pengguna.
     </p>
     <div v-else class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
@@ -43,8 +43,8 @@ onMounted(() => {
         </span>
         <div class="min-w-0">
           <p class="truncate font-semibold text-slate-900">{{ user.name }}</p>
-          <p class="truncate text-sm text-slate-500">{{ user.email }}</p>
-          <p class="text-xs text-slate-400">Bergabung {{ formatDate(user.created_at) }}</p>
+          <p class="truncate text-sm text-slate-600">{{ user.email }}</p>
+          <p class="text-xs text-slate-600">Bergabung {{ formatDate(user.created_at) }}</p>
         </div>
       </article>
     </div>

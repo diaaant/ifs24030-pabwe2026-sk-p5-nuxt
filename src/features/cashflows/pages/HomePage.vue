@@ -57,13 +57,13 @@ const cards = computed(() => [
     title: "Total Pemasukan",
     value: store.stats.total_inflow,
     icon: TrendingUp,
-    tone: "bg-emerald-100 text-emerald-600",
+    tone: "bg-emerald-100 text-emerald-700",
   },
   {
     title: "Total Pengeluaran",
     value: store.stats.total_outflow,
     icon: TrendingDown,
-    tone: "bg-rose-100 text-rose-600",
+    tone: "bg-rose-100 text-rose-700",
   },
   {
     title: "Saldo Kas Tunai",
@@ -75,7 +75,7 @@ const cards = computed(() => [
     title: "Saldo Rekening Tabungan",
     value: store.stats.savings,
     icon: PiggyBank,
-    tone: "bg-amber-100 text-amber-600",
+    tone: "bg-amber-100 text-amber-700",
   },
   {
     title: "Saldo Pinjaman",
@@ -151,12 +151,12 @@ const selectClass =
     <div class="flex flex-wrap items-center justify-between gap-3">
       <div>
         <h1 class="text-2xl font-extrabold text-slate-900">Ringkasan Arus Kas</h1>
-        <p class="text-sm text-slate-500">Pantau pemasukan, pengeluaran, dan saldo Anda.</p>
+        <p class="text-sm text-slate-600">Pantau pemasukan, pengeluaran, dan saldo Anda.</p>
       </div>
       <div class="flex gap-2">
         <button
           type="button"
-          class="inline-flex items-center gap-2 rounded-xl border border-rose-200 px-4 py-2.5 text-sm font-semibold text-rose-600 hover:bg-rose-50"
+          class="inline-flex items-center gap-2 rounded-xl border border-rose-200 px-4 py-2.5 text-sm font-semibold text-rose-700 hover:bg-rose-50"
           data-testid="reset-all-button"
           @click="onResetAll">
           <RotateCcw class="h-4 w-4" />
@@ -183,7 +183,7 @@ const selectClass =
           <component :is="card.icon" class="h-6 w-6" />
         </span>
         <div>
-          <p class="text-xs font-semibold text-slate-500">{{ card.title }}</p>
+          <p class="text-xs font-semibold text-slate-600">{{ card.title }}</p>
           <p class="text-lg font-extrabold text-slate-900">{{ formatRupiah(card.value) }}</p>
         </div>
       </div>
@@ -226,18 +226,18 @@ const selectClass =
       </button>
     </div>
 
-    <p v-if="store.isCashFlow" class="py-10 text-center text-slate-500">
+    <p v-if="store.isCashFlow" class="py-10 text-center text-slate-600">
       Memuat data arus kas...
     </p>
     <p
       v-else-if="store.cashFlows.length === 0"
-      class="rounded-2xl border border-dashed border-slate-200 bg-white py-10 text-center text-slate-500">
+      class="rounded-2xl border border-dashed border-slate-200 bg-white py-10 text-center text-slate-600">
       Belum ada transaksi arus kas.
     </p>
     <template v-else>
       <div class="hidden overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm md:block">
         <table class="w-full text-left text-sm">
-          <thead class="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
+          <thead class="bg-slate-50 text-xs uppercase tracking-wide text-slate-600">
             <tr>
               <th class="px-4 py-3">Tanggal</th>
               <th class="px-4 py-3">Label</th>
@@ -249,7 +249,7 @@ const selectClass =
           </thead>
           <tbody class="divide-y divide-slate-100">
             <tr v-for="item in store.cashFlows" :key="item.id" data-testid="cash-flow-row">
-              <td class="px-4 py-3 text-slate-500">{{ formatDate(item.created_at) }}</td>
+              <td class="px-4 py-3 text-slate-600">{{ formatDate(item.created_at) }}</td>
               <td class="px-4 py-3 font-semibold text-slate-900">{{ item.label }}</td>
               <td class="px-4 py-3 text-slate-600">{{ getSourceLabel(item.source) }}</td>
               <td class="px-4 py-3">
@@ -266,14 +266,14 @@ const selectClass =
                 <div class="flex justify-end gap-1">
                   <RouterLink
                     :to="`/cash-flows/${item.id}`"
-                    class="rounded-lg p-2 text-slate-500 hover:bg-slate-100"
+                    class="rounded-lg p-2 text-slate-600 hover:bg-slate-100"
                     aria-label="Lihat detail"
                     data-testid="detail-link">
                     <Eye class="h-4 w-4" />
                   </RouterLink>
                   <button
                     type="button"
-                    class="rounded-lg p-2 text-slate-500 hover:bg-slate-100"
+                    class="rounded-lg p-2 text-slate-600 hover:bg-slate-100"
                     aria-label="Ubah"
                     data-testid="edit-button"
                     @click="openChange(item)">
@@ -281,7 +281,7 @@ const selectClass =
                   </button>
                   <button
                     type="button"
-                    class="rounded-lg p-2 text-rose-500 hover:bg-rose-50"
+                    class="rounded-lg p-2 text-rose-700 hover:bg-rose-50"
                     aria-label="Hapus"
                     data-testid="delete-button"
                     @click="onDelete(item)">
@@ -303,7 +303,7 @@ const selectClass =
           <div class="flex items-start justify-between gap-2">
             <div>
               <p class="font-semibold text-slate-900">{{ item.label }}</p>
-              <p class="text-xs text-slate-500">
+              <p class="text-xs text-slate-600">
                 {{ getSourceLabel(item.source) }} · {{ formatDate(item.created_at) }}
               </p>
             </div>
@@ -319,20 +319,20 @@ const selectClass =
           <div class="mt-2 flex gap-1">
             <RouterLink
               :to="`/cash-flows/${item.id}`"
-              class="rounded-lg p-2 text-slate-500 hover:bg-slate-100"
+              class="rounded-lg p-2 text-slate-600 hover:bg-slate-100"
               aria-label="Lihat detail">
               <Eye class="h-4 w-4" />
             </RouterLink>
             <button
               type="button"
-              class="rounded-lg p-2 text-slate-500 hover:bg-slate-100"
+              class="rounded-lg p-2 text-slate-600 hover:bg-slate-100"
               aria-label="Ubah"
               @click="openChange(item)">
               <Pencil class="h-4 w-4" />
             </button>
             <button
               type="button"
-              class="rounded-lg p-2 text-rose-500 hover:bg-rose-50"
+              class="rounded-lg p-2 text-rose-700 hover:bg-rose-50"
               aria-label="Hapus"
               @click="onDelete(item)">
               <Trash2 class="h-4 w-4" />

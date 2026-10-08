@@ -9,11 +9,11 @@ const isLogin = computed(() => route.path === "/auth/login");
 const activeTab =
   "rounded-xl bg-white px-4 py-2 text-center text-sm font-semibold text-indigo-600 shadow-sm";
 const inactiveTab =
-  "rounded-xl px-4 py-2 text-center text-sm font-semibold text-slate-500 hover:text-slate-700";
+  "rounded-xl px-4 py-2 text-center text-sm font-semibold text-slate-600 hover:text-slate-700";
 </script>
 
 <template>
-  <div
+  <main
     class="flex min-h-screen items-center justify-center bg-gradient-to-br from-slate-50 to-indigo-50 px-4 py-10">
     <div class="w-full max-w-md">
       <div class="mb-8 text-center">
@@ -22,7 +22,7 @@ const inactiveTab =
           <Wallet class="h-7 w-7 text-white" />
         </div>
         <h1 class="text-3xl font-extrabold text-slate-900">Delcom Cash Flow</h1>
-        <p class="mt-1 text-sm text-slate-500">
+        <p class="mt-1 text-sm text-slate-600">
           Aplikasi Pencatat Arus Kas Pribadi
         </p>
       </div>
@@ -46,5 +46,5 @@ const inactiveTab =
         <RouterView />
       </div>
     </div>
-  </div>
+  </main>
 </template>
