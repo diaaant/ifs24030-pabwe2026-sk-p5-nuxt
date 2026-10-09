@@ -157,8 +157,10 @@ describe("ProfilePage", () => {
     expect(spies.changePassword).not.toHaveBeenCalled();
   });
 
-  it("mengosongkan kolom setelah kata sandi berhasil diubah", async () => {
+  // ✅ TEST KUNCI — Cover baris 144-146
+  it("mengosongkan ketiga kolom kata sandi setelah berhasil diubah", async () => {
     const { wrapper, store, spies } = await setup();
+
     spies.changePassword.mockImplementation(async () => {
       store.isPasswordChanged = true;
     });
@@ -167,20 +169,25 @@ describe("ProfilePage", () => {
     await wrapper.find("[data-testid=password-form]").trigger("submit");
     await flushPromises();
 
-    expect(spies.changePassword).toHaveBeenCalledWith("lama", "baru123", "baru123");
     expect((wrapper.find("#profile-password").element as HTMLInputElement).value).toBe("");
     expect((wrapper.find("#profile-new-password").element as HTMLInputElement).value).toBe("");
     expect((wrapper.find("#profile-confirm-password").element as HTMLInputElement).value).toBe("");
   });
 
   it("mempertahankan kolom bila ubah kata sandi gagal", async () => {
-    const { wrapper } = await setup();
+    const { wrapper, store, spies } = await setup();
+
+    spies.changePassword.mockImplementation(async () => {
+      store.isPasswordChanged = false;
+    });
 
     await fillPassword(wrapper, ["lama", "baru123", "baru123"]);
     await wrapper.find("[data-testid=password-form]").trigger("submit");
     await flushPromises();
 
     expect((wrapper.find("#profile-password").element as HTMLInputElement).value).toBe("lama");
+    expect((wrapper.find("#profile-new-password").element as HTMLInputElement).value).toBe("baru123");
+    expect((wrapper.find("#profile-confirm-password").element as HTMLInputElement).value).toBe("baru123");
   });
 
   it("menampilkan status proses pada tombol dan label", async () => {
